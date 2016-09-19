@@ -32,6 +32,12 @@ app.use(function(req, res, next) {
   next(err);
 });
 
+
+pp.use(function(req, res, next) {
+  res.render(index)
+});
+
+
 // error handlers
 
 // development error handler
