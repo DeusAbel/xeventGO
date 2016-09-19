@@ -32,8 +32,7 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-
-pp.use(function(req, res, next) {
+app.use(function(req, res, next) {
   res.render(index)
 });
 
