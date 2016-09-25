@@ -32,12 +32,6 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/index.html'));
-});
-
-
-
 // error handlers
 
 // development error handler
