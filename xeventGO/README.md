@@ -1,2 +1,0 @@
-# xeventGO
-INP Project
