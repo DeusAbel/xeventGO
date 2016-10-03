@@ -1,7 +1,7 @@
 var mongoose = require( 'mongoose' ); 
-const Schema = mongoose.Schema;
 var gracefulShutdown;
-var dbURI = 'mongodb://localhost/xeventgo';
+//var dbURI = 'mongodb://localhost/xeventgo';
+var dbURI = 'mongodb://admin:episunsa@ds046549.mlab.com:46549/xeventgo_db';
 if (process.env.NODE_ENV === 'production') {
     dbURI = process.env.MONGOLAB_URI;
 }
@@ -49,25 +49,5 @@ process.on('SIGTERM', function() {
     });
 });
 
-// BRING IN YOUR SCHEMAS & MODELS
-//require('./locations');
+require('./esquemas');
 
-
-var usuarioSchema = new mongoose.Schema({ 
-  Nombres: String, 
-  Apellidos: String, 
-  Ubicación: {type: Number, index: '2dsphere'},
-  Eventos: [String] 
-}); 
-
-var usuario = module.exports = mongoose.model('usuario', usuarioSchema); 
-
-
-var eventoSchema = new mongoose.Schema({   
-  Nombre: String, 
-  Fecha: String, 
-  Ubicacion: {type: Number, index: '2dsphere'},
-  usuario_id: { type: Schema.ObjectId, ref: 'usuario' }   
-}); 
-
-var evento = module.exports = mongoose.model('evento', usuarioSchema);
