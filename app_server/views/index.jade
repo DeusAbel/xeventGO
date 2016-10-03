@@ -1,51 +1,12 @@
 extends layout
-
 block content
-  div#Container2.flex-grid(style='height:100%;')
-    div#Container3.row
-      
-      h1= title
-    div#Container4.row
-    
-      p Muy Pronto...2016 #{title} !
-    div#Container5.row
-      |<div class="countdown" data-role="countdown" data-days="2"></div>
-    div#Container6.row.flex-just-center(style='height:100%;')
-      div#cell1.cell.colspan10
-        
+    p <br />
+    div#Container6.row.flex-just-center(style='height:60%;')
+      div#cell1.cell.colspan10      
         #map
-  script.
-    function initMap() {
-    var map = new google.maps.Map(document.getElementById('map'), {
-      disableDefaultUI: true,
-      scrollwheel: false,
-
-      center: {lat: -34.397, lng: 150.644},
-      zoom: 18      
-    });
-    var infoWindow = new google.maps.InfoWindow({map: map});
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        var pos = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        };
-        infoWindow.setPosition(pos);
-        infoWindow.setContent('Te encuentras aquí');
-        map.setCenter(pos);
-      }, function() {
-        handleLocationError(true, infoWindow, map.getCenter());
-      });
-    } else {      
-      handleLocationError(false, infoWindow, map.getCenter());
-    }
-    }
-    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-      infoWindow.setPosition(pos);
-      infoWindow.setContent(browserHasGeolocation ?
-                            'Error: Habilita tu ubicación en tu dispositivo.' :
-                            'Error: No posees servicio de localización.');
-    }
-  |    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASEwAz8-b0Mmg1mZdRAXcKpqhSDwrEOHo&signed_in=true&callback=initMap"
-  |        async defer>
-  |   </script>
+    script(type="text/javascript").
+      function initMap(){var map = new google.maps.Map(document.getElementById('map'), {disableDefaultUI: true,scrollwheel: false, center: {lat: -34.397, lng: 150.644}, zoom: 18});var infoWindow = new google.maps.InfoWindow({map: map});if (navigator.geolocation) {navigator.geolocation.getCurrentPosition(function(position) {var pos = {lat: Position.coords.latitude,lng: position.coords.longitude}; infoWindow.setPosition(pos); infoWindow.setContent('Te encuentras aquí'); map.setCenter(pos);}, function() { handleLocationError(true, infoWindow, map.getCenter());});} else {handleLocationError(false, infoWindow, map.getCenter());}};
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {infoWindow.setPosition(pos);infoWindow.setContent(browserHasGeolocation ? 'Error: Habilita tu ubicación en tu dispositivo.' : 'Error: No posees servicio de localización.');};
+    |<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASEwAz8-b0Mmg1mZdRAXcKpqhSDwrEOHo&signed_in=true&callback=initMap"
+    |   async defer>
+    |   </script>

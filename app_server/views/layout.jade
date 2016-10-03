@@ -1,23 +1,60 @@
 doctype html
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    title= title    
     link(rel='stylesheet', href='/stylesheets/metro.css')
     script(src='/javascripts/jquery.js')
     script(src='/javascripts/metro.js')
     script(src='/javascripts/jquery-1.11.1.min.js')
-    
-    meta(name='viewport', content='initial-scale=1.0, user-scalable=no')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
     meta(charset='utf-8')
     style.
       html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
+       height: 100%;
+       margin: 0;
+       padding: 0;
       }
       #map {
-      height: 100%;
+       height: 100%;
       }
   body
-    block content
+    #ContenedorTotal.flex-grid.bg-gray(style='height:100%; width:100%;')
+      #Cabecera1.row.flex-just-center.fg-lightRed
+        h1(style='white-space:pre;')
+          |<br />xEventGO
+          small   Muy Pronto ...!
+      p|<br /> 
+      #Menu.row.flex-just-center(style='width:100%;')
+        ul.f-menu.block-shadow-impact.bg-grayLight(style='width:100%;')
+          li
+            a(href='#') Inicio
+          li
+            a.dropdown-toggle(href='#') Categorías...
+            ul.d-menu(data-role='dropdown', style='display: none;')
+              li
+                a(href='#') Sociales
+              li
+                a(href='#') Culturales
+              li
+                a.dropdown-toggle(href='#') Deportivos...
+                ul.d-menu(data-role='dropdown')
+                  li
+                    a(href='#') Futball Soccer
+                  li
+                    a(href='#') VoleyBall
+          li
+            a(href='#') Ranking
+          li
+            a(href='#') Sobre Nosotros
+          li
+            a.dropdown-toggle(href='#') Usuario...
+            ul.d-menu(data-role='dropdown')
+              li
+                a(href='#') Perfil
+              li
+                a(href='#') Mis Eventos
+              li
+                a(href='#') Amigos
+              li
+                a(href='#') Salir
+      block content
