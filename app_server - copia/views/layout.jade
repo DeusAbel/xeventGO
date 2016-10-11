@@ -19,7 +19,7 @@ html
         margin: 0;
         padding: 0;
       } 
-  body.bg-grayLight
+  body
     div
       header.app-bar.fixed-top.navy.bg-dark(date-role='appbar', style='box-shadow: 0px 4px 5px #AAA;')
         div#menu.container.main-menu-wrapper
@@ -42,11 +42,11 @@ html
                       a(href='#') Futball Soccer
                     li.bg-dark
                       a(href='#') VoleyBall
-            li.bg-dark.fg-white
+            li.bg-dark.fg-lightRed
               a(href='#') Ranking
-            li.bg-dark.fg-white
+            li.bg-dark.fg-lightRed
               a(href='#') Sobre Nosotros
-            li.bg-dark.fg-white.place-right            
+            li.bg-dark.fg-lightRed.place-right            
               a.dropdown-toggle(href='#')
                 img(src='../images/usuario.png', style='height: 25px; display: inline-block; margin-right: 10px; margin-top:-10px; margin-bottom:-5px')
                 |Usuario...
@@ -65,8 +65,10 @@ html
           div.clearfix(style='width: 0;') 
           nav.app-bar-pullmenu.hidden.flexstyle-app-bar-menu(style='display: none;')
             ul.app-bar-pullmenubar.app-bar-menu.hidden(style='display: none;')
-    div.container.page-content.flex-content-center.bg-grayLight(style='height:100%; width:100%;')     
-      #ContenedorTotal.flex-grid(style='height:100%; width:auto; margin-top:6rem; margin-bottom:10rem')
+    div.container.page-content.flex-content-center.bg-lighterGray(style='height:100%; width:100%;')     
+      #ContenedorTotal.flex-grid(style='height:100%; width:auto;')
+        h1.fg-lightRed.bg-lighterGray(style='text-align: center; padding-top:5.8rem') xEventGO
+          small   Starter ...!
         //contenido
         block content
         //footer   

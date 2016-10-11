@@ -26,7 +26,7 @@ var evento_asistencia_Schema = new mongoose.Schema({
   evento_id: {type: Schema.ObjectId, ref: 'evento'}  
 }); 
 
-var usuario = mongoose.model('usuario', usuarioSchema); 
+var usuario = mongoose.model('usuarios', usuarioSchema); 
 var evento = mongoose.model('evento', eventoSchema);
 var contacto = mongoose.model('contacto', contactoSchema);
 var evento_asistencia = mongoose.model('evento_asistencia', evento_asistencia_Schema);
