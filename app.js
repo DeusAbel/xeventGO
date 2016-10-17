@@ -7,8 +7,8 @@ var bodyParser = require('body-parser');
 require('./app_api/models/xeventgo_db');
 
 
-//var routesApi = require('./app_api/routes/index');
 var routes = require('./app_server/routes/index');
+var routesApi = require('./app_api/routes/index');
 // var users = require('./app_server/routes/users');
 
 var app = express();
@@ -26,7 +26,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-//app.use('/api', routesApi); 
+app.use('/api', routesApi); 
 
 // app.use('/users', users);
 

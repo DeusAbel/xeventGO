@@ -8,8 +8,11 @@ var ctrlUsuarios = require('../controllers/usuarios');
 router.get('/', function (req, res, next) {
     res.render('index', { title: 'xEventGO' });
 });
-router.get('/usuarios/registro', ctrlUsuarios.registro);
-router.get('/usuarios/login', ctrlUsuarios.login);
+router.get('/usuarios/registro', ctrlUsuarios.registro_p);
+router.post('/usuarios/registro', ctrlUsuarios.registro);
+router.get('/usuarios/login', ctrlUsuarios.login_p);
+router.post('/usuarios/login', ctrlUsuarios.login);
+
 
 /* Other pages */
 //router.get('/about', ctrlOthers.about);

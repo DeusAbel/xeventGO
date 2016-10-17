@@ -1,4 +1,5 @@
 extends layout
+include _includes/sharedHTMLfunctions
 block content
   div#Container6.row.flex-just-center.cell-auto-size(style='height:100%; width:auto;')
     div#cell1.cell.colspan4
@@ -8,10 +9,10 @@ block content
           span.icon.mif-user-plus
           span.title Registro
         .content.bg-grayLight(style='margin:0px 30px 0px 30px;')
-          form(data-role='validator', data-on-before-submit='no_submit', data-hint-mode='hint', data-hint-easing='easeOutBounce', novalidate='novalidate')
+          form(data-role='validator', data-on-before-submit='no_submit', data-hint-mode='hint', data-hint-easing='easeOutBounce', novalidate='novalidate', action="/usuarios/registro", method="post")
             //usuario
             .input-control.modern.text.iconic.full-size.required(data-role='input')
-              input(data-validate-func='required', data-validate-hint='Este campo no puede estar vacio', data-validate-hint-position='top',type='text', name='usuario')
+              input(data-validate-func='required', data-validate-hint='Este campo no puede estar vacio', data-validate-hint-position='top',type='text', id='usuario', name='usuario')
               span.input-state-error.mif-warning
               span.input-state-success.mif-checkmark    
               span.label Nombre de Usuario
@@ -23,7 +24,7 @@ block content
             //Nombres
             |<br/>
             .input-control.modern.text.iconic.required.full-size(data-role='input')
-              input(data-validate-func='required', data-validate-hint='Este campo no puede estar vacio', data-validate-hint-position='top',type='text', name='Nombres')
+              input(data-validate-func='required', data-validate-hint='Este campo no puede estar vacio', data-validate-hint-position='top',type='text', id='nombre', name='nombre')
               span.input-state-error.mif-warning
               span.input-state-success.mif-checkmark    
               span.label Nombres y Apellidos
@@ -35,7 +36,7 @@ block content
             //email
             |<br/>
             .input-control.modern.text.iconic.required.full-size(data-role='input')
-              input(data-validate-func='required', data-validate-hint='Este campo no puede estar vacio', data-validate-hint-position='top',type='password', name='Nombres')
+              input(data-validate-func='required', data-validate-hint='Este campo no puede estar vacio', data-validate-hint-position='top',type='email', id='email', name='email')
               span.input-state-error.mif-warning
               span.input-state-success.mif-checkmark    
               span.label Correo Electrónico
@@ -47,7 +48,7 @@ block content
             //pass
             |<br/>
             .input-control.modern.text.iconic.required.full-size(data-role='input')
-              input(data-validate-func='required', data-validate-hint='Este campo no puede estar vacio', data-validate-hint-position='top',type='password', name='Nombres')
+              input(data-validate-func='required', data-validate-hint='Este campo no puede estar vacio', data-validate-hint-position='top',type='password', id='password', name='password')
               span.input-state-error.mif-warning
               span.input-state-success.mif-checkmark    
               span.label Contraseña

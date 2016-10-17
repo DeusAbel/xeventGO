@@ -2,11 +2,10 @@ var mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 var usuarioSchema = new mongoose.Schema({ 
-  Nombres: String, 
-  Apellidos: String, 
-  Contraseña: String,
-  email: String,
-  Ubicación: {type: Number, index: '2dsphere'}
+  Usuario: String, 
+  Nombre: String, 
+  Email: String,
+  Password: String,  
 }); 
 
 var eventoSchema = new mongoose.Schema({   
