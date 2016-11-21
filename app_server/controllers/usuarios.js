@@ -35,12 +35,12 @@ var getUserInfo = function (req, res, callback) {
       var data = body;
       console.log(response.statusCode);
       if (response.statusCode === 200) {
-        console.log('bien');
-        
-        callback(req, res, data);
+        console.log('bien');        
+        //callback(req, res, data);
+        res.redirect('/index2');        
       } else {
         console.log('mal');
-        res.redirect('/index');
+        res.redirect('/error');
       }
     }
   );
